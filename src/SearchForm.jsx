@@ -5,9 +5,11 @@ function SearchForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const searchTerm = e.target.elements.search.value;
+    let searchTerm = e.target.elements.search.value.toLowerCase();
+    console.log(searchTerm);
     if (!searchTerm) return;
     setSearchValue(searchTerm);
+    e.target.elements.search.value = '';
   };
 
   return (
